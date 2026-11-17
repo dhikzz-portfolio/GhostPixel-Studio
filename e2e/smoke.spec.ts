@@ -1,0 +1,2 @@
+import { test, expect } from '@playwright/test';
+test('primary navigation and client-side notice render', async ({ page }) => { await page.goto('/'); await expect(page.getByText('GHOSTPIXEL STUDIO')).toBeVisible(); await expect(page.getByText('100% CLIENT-SIDE PROCESSING')).toBeVisible(); await page.getByRole('button', { name: 'Stego Encoder' }).click(); await expect(page.getByText('ENCRYPTED PAYLOAD')).toBeVisible(); await page.getByRole('button', { name: 'Stego Decoder' }).click(); await expect(page.getByText('STEGO DECODER')).toBeVisible(); });
